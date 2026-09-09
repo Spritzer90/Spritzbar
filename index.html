@@ -1,1 +1,2203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>SPRITZBAR | Mobile Cocktailbar</title>
+
+  <meta
+    name="description"
+    content="SPRITZBAR – die mobile Cocktailbar für Hochzeiten, Geburtstage, Firmenfeiern und Events. Fresh. Fruity. On the Go!"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --orange: #ff5a1f;
+      --orange-light: #ff7a25;
+      --orange-dark: #e84116;
+      --yellow: #ffc331;
+      --cream: #fff2d0;
+      --black: #111111;
+      --dark: #19130f;
+      --white: #ffffff;
+      --green: #203020;
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* -------------------- */
+    /* NAVIGATION           */
+    /* -------------------- */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+
+      background: rgba(17,17,17,.94);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 4px solid var(--orange);
+    }
+
+    .nav {
+      min-height: 82px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--orange);
+
+      border: 3px solid var(--cream);
+      border-radius: 50%;
+
+      font-size: 25px;
+    }
+
+    .brand-text strong {
+      display: block;
+
+      font-family: "Anton", sans-serif;
+      font-size: 1.9rem;
+      letter-spacing: 1px;
+      line-height: 1;
+
+      color: var(--white);
+    }
+
+    .brand-text span {
+      color: var(--yellow);
+      font-size: .65rem;
+
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      list-style: none;
+
+      color: var(--white);
+
+      font-size: .9rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .nav-button {
+      background: var(--orange);
+      color: white !important;
+
+      padding: 12px 20px;
+
+      border-radius: 7px;
+
+      box-shadow: 4px 4px 0 var(--yellow);
+
+      transition: .2s;
+    }
+
+    .nav-button:hover {
+      transform: translate(-2px,-2px);
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .menu-toggle {
+      display: none;
+
+      background: transparent;
+      border: none;
+
+      font-size: 2rem;
+      color: white;
+
+      cursor: pointer;
+    }
+
+
+    /* -------------------- */
+    /* HERO                 */
+    /* -------------------- */
+
+    .hero {
+      min-height: 100vh;
+
+      padding-top: 120px;
+      padding-bottom: 80px;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(255,195,49,.26),
+          transparent 20%
+        ),
+
+        linear-gradient(
+          135deg,
+          #ff6528,
+          #ff491e 50%,
+          #e93b17
+        );
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      width: 450px;
+      height: 450px;
+
+      left: -150px;
+      bottom: -120px;
+
+      background:
+
+        repeating-conic-gradient(
+          #111 0deg 6deg,
+          transparent 6deg 12deg
+        );
+
+      opacity: .07;
+
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "🍊";
+
+      position: absolute;
+
+      right: -45px;
+      top: 110px;
+
+      font-size: 260px;
+
+      opacity: .10;
+
+      transform: rotate(-15deg);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+
+      align-items: center;
+
+      gap: 55px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+
+      background: var(--black);
+      color: var(--yellow);
+
+      border: 3px solid var(--cream);
+
+      padding: 9px 17px;
+
+      font-size: .8rem;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-bottom: 23px;
+
+      transform: rotate(-2deg);
+
+      box-shadow: 6px 6px 0 rgba(0,0,0,.18);
+    }
+
+    .hero h1 {
+      font-family: "Anton", sans-serif;
+
+      font-size: clamp(4.5rem, 9vw, 8rem);
+
+      line-height: .88;
+
+      text-transform: uppercase;
+
+      color: var(--cream);
+
+      letter-spacing: 1px;
+
+      text-shadow:
+        5px 5px 0 var(--black),
+        8px 8px 0 rgba(255,195,49,.7);
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero-subline {
+      margin-top: 28px;
+
+      max-width: 650px;
+
+      font-size: 1.08rem;
+      font-weight: 600;
+
+      line-height: 1.7;
+
+      color: #2b160e;
+    }
+
+    .hero-tagline {
+      margin-top: 18px;
+
+      font-family: "Anton", sans-serif;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      font-size: 1.25rem;
+
+      color: var(--cream);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 33px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 15px 24px;
+
+      border-radius: 7px;
+
+      font-weight: 900;
+      text-transform: uppercase;
+
+      transition: .2s;
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: white;
+
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .btn-dark:hover {
+      transform: translate(-2px,-2px);
+      box-shadow: 9px 9px 0 var(--yellow);
+    }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--black);
+
+      border: 3px solid var(--black);
+    }
+
+    .btn-light:hover {
+      background: var(--yellow);
+    }
+
+
+    /* ANHÄNGER FOTO */
+
+    .trailer-wrapper {
+      position: relative;
+    }
+
+    .trailer-image {
+      position: relative;
+
+      background: var(--black);
+
+      padding: 10px;
+
+      border-radius: 20px;
+
+      transform: rotate(1.5deg);
+
+      box-shadow:
+        15px 18px 0 rgba(0,0,0,.23);
+    }
+
+    .trailer-image img {
+      border-radius: 12px;
+
+      height: 550px;
+      object-fit: cover;
+    }
+
+    .photo-label {
+      position: absolute;
+
+      left: -20px;
+      bottom: 30px;
+
+      background: var(--yellow);
+      color: var(--black);
+
+      padding: 14px 18px;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      transform: rotate(-5deg);
+
+      box-shadow: 6px 6px 0 var(--black);
+    }
+
+
+    /* -------------------- */
+    /* STRIP                */
+    /* -------------------- */
+
+    .orange-strip {
+      background: var(--black);
+      color: var(--cream);
+
+      padding: 17px 0;
+
+      border-top: 4px solid var(--yellow);
+      border-bottom: 4px solid var(--yellow);
+
+      overflow: hidden;
+    }
+
+    .strip-inner {
+      display: flex;
+      justify-content: center;
+
+      gap: 45px;
+
+      flex-wrap: wrap;
+
+      font-family: "Anton", sans-serif;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      font-size: 1.1rem;
+    }
+
+    .strip-inner span {
+      color: var(--yellow);
+    }
+
+
+    /* -------------------- */
+    /* SECTIONS             */
+    /* -------------------- */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-title {
+      max-width: 800px;
+      margin-bottom: 50px;
+    }
+
+    .mini-title {
+      color: var(--orange-dark);
+
+      font-weight: 900;
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: .8rem;
+    }
+
+    .section-title h2 {
+      margin-top: 9px;
+
+      font-family: "Anton", sans-serif;
+
+      font-size: clamp(3rem, 6vw, 5.2rem);
+
+      line-height: .95;
+
+      text-transform: uppercase;
+    }
+
+    .section-title p {
+      margin-top: 15px;
+
+      font-size: 1rem;
+
+      max-width: 650px;
+
+      color: #655349;
+    }
+
+
+    /* -------------------- */
+    /* LEISTUNGEN           */
+    /* -------------------- */
+
+    .services {
+      background:
+
+        radial-gradient(
+          circle at 90% 50%,
+          rgba(255,90,31,.11),
+          transparent 30%
+        ),
+
+        var(--cream);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+
+      min-height: 280px;
+
+      background: white;
+
+      border: 4px solid var(--black);
+      border-radius: 14px;
+
+      padding: 30px;
+
+      box-shadow: 8px 8px 0 var(--orange);
+
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      transform: translate(-3px,-3px);
+
+      box-shadow: 12px 12px 0 var(--yellow);
+    }
+
+    .service-card:nth-child(even) {
+      background: var(--orange);
+      color: white;
+
+      box-shadow: 8px 8px 0 var(--black);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+
+      margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+      font-family: "Anton", sans-serif;
+
+      font-size: 1.55rem;
+
+      text-transform: uppercase;
+      letter-spacing: .5px;
+
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: .92rem;
+      line-height: 1.65;
+    }
+
+
+    /* -------------------- */
+    /* COCKTAILS            */
+    /* -------------------- */
+
+    .drinks {
+      background: var(--black);
+      color: white;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .drinks::after {
+      content: "🍹";
+
+      position: absolute;
+
+      right: -20px;
+      bottom: -80px;
+
+      font-size: 320px;
+
+      opacity: .05;
+    }
+
+    .drinks .mini-title {
+      color: var(--yellow);
+    }
+
+    .drinks .section-title p {
+      color: #cbbdaf;
+    }
+
+    .cocktail-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 18px;
+    }
+
+    .cocktail-card {
+      position: relative;
+
+      height: 420px;
+
+      overflow: hidden;
+
+      border-radius: 14px;
+
+      border: 4px solid var(--cream);
+
+      box-shadow: 7px 7px 0 var(--orange);
+    }
+
+    .cocktail-card img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: .4s;
+    }
+
+    .cocktail-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .cocktail-card::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,.92)
+      );
+    }
+
+    .drink-info {
+      position: absolute;
+
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+
+      z-index: 3;
+    }
+
+    .drink-info h3 {
+      font-family: "Anton", sans-serif;
+
+      font-size: 1.7rem;
+
+      color: var(--yellow);
+
+      text-transform: uppercase;
+    }
+
+    .drink-info p {
+      margin-top: 4px;
+
+      font-size: .85rem;
+
+      color: white;
+    }
+
+
+    /* -------------------- */
+    /* EVENTS               */
+    /* -------------------- */
+
+    .events {
+      background: var(--orange);
+    }
+
+    .events .mini-title {
+      color: var(--black);
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+
+      gap: 18px;
+    }
+
+    .event-card {
+      background: var(--cream);
+
+      border: 4px solid var(--black);
+
+      padding: 30px;
+
+      display: flex;
+
+      gap: 20px;
+
+      box-shadow: 8px 8px 0 rgba(0,0,0,.28);
+
+      border-radius: 12px;
+    }
+
+    .event-number {
+      min-width: 58px;
+      height: 58px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--black);
+      color: var(--yellow);
+
+      font-family: "Anton", sans-serif;
+
+      font-size: 1.4rem;
+    }
+
+    .event-card h3 {
+      font-family: "Anton", sans-serif;
+
+      text-transform: uppercase;
+
+      font-size: 1.45rem;
+    }
+
+    .event-card p {
+      margin-top: 7px;
+
+      color: #5d4e44;
+
+      line-height: 1.65;
+    }
+
+
+    /* -------------------- */
+    /* ANHÄNGER SECTION     */
+    /* -------------------- */
+
+    .mobilebar {
+      background: var(--cream);
+    }
+
+    .mobilebar-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+
+      gap: 55px;
+
+      align-items: center;
+    }
+
+    .big-trailer {
+      border: 6px solid var(--black);
+
+      border-radius: 16px;
+
+      padding: 8px;
+
+      background: var(--orange);
+
+      box-shadow: 12px 12px 0 var(--yellow);
+    }
+
+    .big-trailer img {
+      height: 520px;
+
+      object-fit: cover;
+
+      border-radius: 8px;
+    }
+
+    .mobilebar-content h2 {
+      font-family: "Anton", sans-serif;
+
+      font-size: clamp(3.2rem,6vw,5.5rem);
+
+      line-height: .95;
+
+      text-transform: uppercase;
+    }
+
+    .mobilebar-content h2 span {
+      color: var(--orange);
+    }
+
+    .mobilebar-content p {
+      margin-top: 20px;
+
+      color: #5f5046;
+
+      line-height: 1.75;
+    }
+
+    .mobilebar-list {
+      margin-top: 28px;
+
+      display: grid;
+      gap: 12px;
+    }
+
+    .mobilebar-list div {
+      display: flex;
+
+      align-items: center;
+      gap: 12px;
+
+      font-weight: 800;
+    }
+
+    .check {
+      width: 33px;
+      height: 33px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--orange);
+      color: white;
+
+      border: 3px solid var(--black);
+
+      border-radius: 50%;
+    }
+
+
+    /* -------------------- */
+    /* CTA                  */
+    /* -------------------- */
+
+    .cta-section {
+      padding: 80px 0;
+
+      background: var(--black);
+    }
+
+    .cta-box {
+      position: relative;
+
+      background: var(--yellow);
+
+      padding: 65px 40px;
+
+      border: 6px solid var(--orange);
+
+      text-align: center;
+
+      overflow: hidden;
+
+      box-shadow: 10px 10px 0 var(--orange-dark);
+    }
+
+    .cta-box::before {
+      content: "🍊";
+
+      position: absolute;
+      left: -30px;
+      bottom: -60px;
+
+      font-size: 220px;
+
+      opacity: .15;
+    }
+
+    .cta-box h2 {
+      position: relative;
+
+      font-family: "Anton", sans-serif;
+
+      font-size: clamp(3rem,7vw,6rem);
+
+      line-height: .9;
+
+      text-transform: uppercase;
+    }
+
+    .cta-box p {
+      position: relative;
+
+      max-width: 650px;
+
+      margin: 20px auto 28px;
+
+      font-weight: 600;
+    }
+
+
+    /* -------------------- */
+    /* KONTAKT              */
+    /* -------------------- */
+
+    .contact {
+      background:
+
+        radial-gradient(
+          circle at 10% 90%,
+          rgba(255,90,31,.14),
+          transparent 25%
+        ),
+
+        var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: .8fr 1.2fr;
+
+      gap: 25px;
+    }
+
+    .contact-info {
+      background: var(--orange);
+      color: white;
+
+      border: 5px solid var(--black);
+
+      padding: 35px;
+
+      box-shadow: 9px 9px 0 var(--yellow);
+    }
+
+    .contact-info h3 {
+      font-family: "Anton", sans-serif;
+
+      font-size: 2.4rem;
+
+      text-transform: uppercase;
+    }
+
+    .contact-line {
+      padding: 18px 0;
+
+      border-bottom: 2px solid rgba(255,255,255,.25);
+    }
+
+    .contact-line:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-line small {
+      display: block;
+
+      color: var(--cream);
+
+      margin-bottom: 4px;
+    }
+
+    .contact-line strong {
+      font-size: 1rem;
+    }
+
+
+    /* FORM */
+
+    .form {
+      background: white;
+
+      border: 5px solid var(--black);
+
+      padding: 35px;
+
+      box-shadow: 9px 9px 0 var(--orange);
+    }
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 15px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+
+      gap: 7px;
+    }
+
+    .input-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: .8rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+
+      padding: 14px;
+
+      border: 3px solid var(--black);
+
+      background: var(--cream);
+
+      font-family: inherit;
+
+      font-size: .95rem;
+
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--orange);
+    }
+
+    textarea {
+      resize: vertical;
+
+      min-height: 140px;
+    }
+
+    .form button {
+      width: 100%;
+
+      border: none;
+
+      margin-top: 18px;
+
+      cursor: pointer;
+
+      font-family: inherit;
+    }
+
+
+    /* -------------------- */
+    /* FOOTER               */
+    /* -------------------- */
+
+    footer {
+      background: var(--black);
+      color: white;
+
+      padding: 45px 0;
+
+      border-top: 5px solid var(--orange);
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 25px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: "Anton", sans-serif;
+
+      font-size: 2rem;
+
+      color: var(--orange);
+    }
+
+    .footer-logo span {
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 20px;
+
+      font-weight: 700;
+      font-size: .85rem;
+    }
+
+
+    /* -------------------- */
+    /* MOBILE               */
+    /* -------------------- */
+
+    @media(max-width:1000px) {
+
+      .hero-grid,
+      .mobilebar-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .cocktail-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+    }
+
+
+    @media(max-width:760px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 82px;
+        left: 0;
+        right: 0;
+
+        background: var(--black);
+
+        padding: 30px;
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: clamp(4rem,20vw,6rem);
+      }
+
+      .trailer-image img {
+        height: 400px;
+      }
+
+      .services-grid,
+      .cocktail-grid,
+      .event-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .input-group.full {
+        grid-column: auto;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .big-trailer img {
+        height: 360px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+  <div class="container nav">
+
+    <a href="#start" class="brand">
+
+      <div class="brand-icon">
+        🍹
+      </div>
+
+      <div class="brand-text">
+        <strong>SPRITZBAR</strong>
+        <span>Fresh · Fruity · On The Go</span>
+      </div>
+
+    </a>
+
+
+    <button class="menu-toggle" id="menuToggle">
+      ☰
+    </button>
+
+
+    <ul class="nav-links" id="navLinks">
+
+      <li>
+        <a href="#start">Start</a>
+      </li>
+
+      <li>
+        <a href="#angebot">Angebot</a>
+      </li>
+
+      <li>
+        <a href="#drinks">Drinks</a>
+      </li>
+
+      <li>
+        <a href="#events">Events</a>
+      </li>
+
+      <li>
+        <a href="#kontakt" class="nav-button">
+          Jetzt anfragen
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero" id="start">
+
+  <div class="container hero-grid">
+
+
+    <div>
+
+      <div class="hero-badge">
+        Mobile Cocktailbar
+      </div>
+
+
+      <h1>
+        SPRITZ<span>BAR</span>
+      </h1>
+
+
+      <div class="hero-tagline">
+        Fresh · Fruity · On The Go!
+      </div>
+
+
+      <p class="hero-subline">
+
+        Kalte Drinks, fruchtige Cocktails und gute Vibes direkt
+        auf deinem Event.
+
+        Die SPRITZBAR bringt echtes Bar-Feeling überall dorthin,
+        wo gefeiert wird.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a href="#kontakt" class="btn btn-dark">
+          🍹 Event anfragen
+        </a>
+
+        <a href="#drinks" class="btn btn-light">
+          Drinks entdecken
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="trailer-wrapper">
+
+      <div class="trailer-image">
+
+        <img
+          src="spritzbar.jpg"
+          alt="SPRITZBAR mobiler Cocktailbar Anhänger"
+        >
+
+      </div>
+
+      <div class="photo-label">
+        Drinks · Good Vibes
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- SCHWARZER STREIFEN -->
+
+<div class="orange-strip">
+
+  <div class="container strip-inner">
+
+    <div>🍹 FRESH <span>DRINKS</span></div>
+
+    <div>🍊 FRUITY <span>VIBES</span></div>
+
+    <div>🚚 MOBILE <span>BAR</span></div>
+
+    <div>🎉 YOUR <span>EVENT</span></div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ANGEBOT -->
+
+<section class="services" id="angebot">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <div class="mini-title">
+        Was wir machen
+      </div>
+
+      <h2>
+        DIE BAR KOMMT
+        ZU DEINER PARTY.
+      </h2>
+
+      <p>
+
+        Kein langweiliger Getränkestand.
+        Die SPRITZBAR ist eine mobile Cocktailbar,
+        die schon optisch zum Highlight deiner Veranstaltung wird.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="services-grid">
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🍹
+        </div>
+
+        <h3>
+          Frische Cocktails
+        </h3>
+
+        <p>
+          Fruchtige Klassiker, moderne Drinks und alkoholfreie Cocktails
+          werden frisch vor Ort zubereitet.
+        </p>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🚚
+        </div>
+
+        <h3>
+          Mobile Bar
+        </h3>
+
+        <p>
+          Unser auffälliger SPRITZBAR-Anhänger kommt direkt
+          zu deiner Location.
+        </p>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🍊
+        </div>
+
+        <h3>
+          Fresh & Fruity
+        </h3>
+
+        <p>
+          Frische Zutaten, Eis, Früchte und eine Cocktailkarte,
+          die zu deinem Event passt.
+        </p>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🎉
+        </div>
+
+        <h3>
+          Good Vibes
+        </h3>
+
+        <p>
+          Die SPRITZBAR ist nicht nur eine Bar,
+          sondern Teil der Atmosphäre deiner Veranstaltung.
+        </p>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          🧊
+        </div>
+
+        <h3>
+          Alles dabei
+        </h3>
+
+        <p>
+          Bar, Equipment, Zutaten, Eis und Cocktailzubehör
+          bringen wir direkt mit.
+        </p>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          😎
+        </div>
+
+        <h3>
+          Einfach feiern
+        </h3>
+
+        <p>
+          Du kümmerst dich um deine Gäste.
+          Wir kümmern uns um die Drinks.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- COCKTAILS -->
+
+<section class="drinks" id="drinks">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <div class="mini-title">
+        Drinks
+      </div>
+
+      <h2>
+        FRUCHTIG.
+        EISKALT.
+        LECKER.
+      </h2>
+
+      <p>
+        Deine Cocktailkarte kann passend zum Event
+        individuell zusammengestellt werden.
+      </p>
+
+    </div>
+
+
+
+    <div class="cocktail-grid">
+
+
+      <article class="cocktail-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85"
+          alt="Mojito"
+        >
+
+        <div class="drink-info">
+
+          <h3>
+            Mojito
+          </h3>
+
+          <p>
+            Limette · Minze · Rum · Soda
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="cocktail-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=900&q=85"
+          alt="Aperol Spritz"
+        >
+
+        <div class="drink-info">
+
+          <h3>
+            Spritz
+          </h3>
+
+          <p>
+            Aperitif · Orange · Eis · Sprudel
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="cocktail-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1560508180-03f285f67ded?auto=format&fit=crop&w=900&q=85"
+          alt="Tropical Cocktail"
+        >
+
+        <div class="drink-info">
+
+          <h3>
+            Tropical
+          </h3>
+
+          <p>
+            Maracuja · Ananas · Limette
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="cocktail-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85"
+          alt="Cocktail"
+        >
+
+        <div class="drink-info">
+
+          <h3>
+            Signature Drink
+          </h3>
+
+          <p>
+            Unser besonderer SPRITZBAR Mix
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- EVENTS -->
+
+<section class="events" id="events">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <div class="mini-title">
+        Wo wir feiern
+      </div>
+
+      <h2>
+        FÜR FAST JEDES EVENT.
+      </h2>
+
+    </div>
+
+
+
+    <div class="event-grid">
+
+
+      <div class="event-card">
+
+        <div class="event-number">
+          01
+        </div>
+
+        <div>
+
+          <h3>
+            Hochzeiten
+          </h3>
+
+          <p>
+            Frische Drinks für Empfang, Abendveranstaltung
+            und Hochzeitsparty.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="event-card">
+
+        <div class="event-number">
+          02
+        </div>
+
+        <div>
+
+          <h3>
+            Geburtstage
+          </h3>
+
+          <p>
+            Die mobile Bar als Highlight deiner Geburtstagsfeier.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="event-card">
+
+        <div class="event-number">
+          03
+        </div>
+
+        <div>
+
+          <h3>
+            Firmenfeiern
+          </h3>
+
+          <p>
+            Sommerfest, Weihnachtsfeier oder Firmenjubiläum.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="event-card">
+
+        <div class="event-number">
+          04
+        </div>
+
+        <div>
+
+          <h3>
+            Private Events
+          </h3>
+
+          <p>
+            Gartenparty, Feier, Festival oder besondere Veranstaltung.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ANHÄNGER -->
+
+<section class="mobilebar">
+
+  <div class="container mobilebar-grid">
+
+
+    <div class="big-trailer">
+
+      <img
+        src="spritzbar.jpg"
+        alt="SPRITZBAR Cocktail Anhänger"
+      >
+
+    </div>
+
+
+
+    <div class="mobilebar-content">
+
+
+      <div class="mini-title">
+        Das Herzstück
+      </div>
+
+
+      <h2>
+        UNSERE
+        <span>SPRITZBAR.</span>
+      </h2>
+
+
+      <p>
+
+        Unser mobiler Anhänger ist schon aus der Entfernung
+        kaum zu übersehen.
+
+        Orange, fruchtig, auffällig und komplett im
+        SPRITZBAR-Look.
+
+        Damit bekommst du nicht nur eine Cocktailbar,
+        sondern gleichzeitig einen echten Hingucker
+        für deine Veranstaltung.
+
+      </p>
+
+
+      <div class="mobilebar-list">
+
+        <div>
+          <span class="check">✓</span>
+          Mobiler Cocktailanhänger
+        </div>
+
+        <div>
+          <span class="check">✓</span>
+          Auffälliges SPRITZBAR Design
+        </div>
+
+        <div>
+          <span class="check">✓</span>
+          Direkt bei deiner Veranstaltung
+        </div>
+
+        <div>
+          <span class="check">✓</span>
+          Drinks & Good Vibes
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>
+        BEREIT FÜR
+        GOOD VIBES?
+      </h2>
+
+      <p>
+        Hol dir die SPRITZBAR auf dein Event.
+        Schreib uns Datum, Ort und ungefähre Gästezahl
+        und wir melden uns bei dir.
+      </p>
+
+      <a href="#kontakt" class="btn btn-dark">
+        🍹 SPRITZBAR anfragen
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- KONTAKT -->
+
+<section class="contact" id="kontakt">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <div class="mini-title">
+        Kontakt
+      </div>
+
+      <h2>
+        HOL DIR DIE
+        SPRITZBAR.
+      </h2>
+
+      <p>
+        Schick uns kurz die wichtigsten Informationen zu deiner Veranstaltung.
+      </p>
+
+    </div>
+
+
+
+    <div class="contact-grid">
+
+
+      <div class="contact-info">
+
+
+        <h3>
+          SPRITZBAR
+        </h3>
+
+
+        <div class="contact-line">
+
+          <small>
+            E-Mail
+          </small>
+
+          <strong>
+            info@deine-domain.de
+          </strong>
+
+        </div>
+
+
+        <div class="contact-line">
+
+          <small>
+            Telefon / WhatsApp
+          </small>
+
+          <strong>
+            +49 123 456789
+          </strong>
+
+        </div>
+
+
+        <div class="contact-line">
+
+          <small>
+            Einsatzgebiet
+          </small>
+
+          <strong>
+            Berlin · Brandenburg · Umgebung
+          </strong>
+
+        </div>
+
+
+        <div class="contact-line">
+
+          <small>
+            Motto
+          </small>
+
+          <strong>
+            Fresh · Fruity · On The Go
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <form
+        class="form"
+        action="https://formspree.io/f/DEINE_FORM_ID"
+        method="POST"
+      >
+
+
+        <div class="form-grid">
+
+
+          <div class="input-group">
+
+            <label>
+              Name
+            </label>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Dein Name"
+              required
+            >
+
+          </div>
+
+
+
+          <div class="input-group">
+
+            <label>
+              E-Mail
+            </label>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="name@email.de"
+              required
+            >
+
+          </div>
+
+
+
+          <div class="input-group">
+
+            <label>
+              Datum
+            </label>
+
+            <input
+              type="date"
+              name="datum"
+            >
+
+          </div>
+
+
+
+          <div class="input-group">
+
+            <label>
+              Gäste
+            </label>
+
+            <input
+              type="number"
+              name="gaeste"
+              placeholder="z. B. 100"
+            >
+
+          </div>
+
+
+
+          <div class="input-group full">
+
+            <label>
+              Veranstaltung
+            </label>
+
+            <select name="event">
+
+              <option>
+                Hochzeit
+              </option>
+
+              <option>
+                Geburtstag
+              </option>
+
+              <option>
+                Firmenfeier
+              </option>
+
+              <option>
+                Privatveranstaltung
+              </option>
+
+              <option>
+                Festival
+              </option>
+
+              <option>
+                Sonstiges
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <div class="input-group full">
+
+            <label>
+              Nachricht
+            </label>
+
+            <textarea
+              name="nachricht"
+              placeholder="Wo findet dein Event statt und was hast du geplant?"
+            ></textarea>
+
+          </div>
+
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-dark"
+        >
+          🍹 Anfrage absenden
+        </button>
+
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+
+    <div class="footer-logo">
+
+      SPRITZ<span>BAR</span>
+
+    </div>
+
+
+    <div>
+      Fresh · Fruity · On The Go
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#">
+        Impressum
+      </a>
+
+      <a href="#">
+        Datenschutz
+      </a>
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuToggle.addEventListener("click", () => {
+
+  navLinks.classList.toggle("active");
+
+  if(navLinks.classList.contains("active")) {
+
+    menuToggle.textContent = "✕";
+
+  } else {
+
+    menuToggle.textContent = "☰";
+
+  }
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("active");
+
+    menuToggle.textContent = "☰";
+
+  });
+
+});
+
+</script>
+
+
+</body>
+</html>
