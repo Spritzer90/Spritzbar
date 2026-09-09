@@ -1977,219 +1977,136 @@
         <div class="form-grid">
 <div class="form-grid">
 
-  <!-- HIER NEU EINFÜGEN -->
-
   <div class="input-group">
-
-    <label>
-      Name *
-    </label>
-
+    <label>Name *</label>
     <input
       type="text"
       name="name"
       placeholder="Vor- und Nachname"
       required
     >
-
   </div>
 
-
   <div class="input-group">
-
-    <label>
-      E-Mail *
-    </label>
-
+    <label>E-Mail *</label>
     <input
       type="email"
       name="email"
       placeholder="name@email.de"
       required
     >
-
   </div>
 
-
   <div class="input-group">
-
-    <label>
-      Telefonnummer
-    </label>
-
+    <label>Telefonnummer</label>
     <input
       type="tel"
       name="telefon"
       placeholder="+49 ..."
     >
-
   </div>
 
-
   <div class="input-group">
-
-    <label>
-      Veranstaltungsort / PLZ *
-    </label>
-
+    <label>Veranstaltungsort / PLZ *</label>
     <input
       type="text"
       name="veranstaltungsort"
       placeholder="z. B. 14476 Potsdam"
       required
     >
-
   </div>
 
+  <div class="input-group full">
+    <label>Veranstaltungsdauer</label>
 
-  <!-- DANACH BLEIBT DEIN BISHERIGER BLOCK -->
+    <select
+      id="dauer"
+      name="dauer"
+      onchange="toggleMehrtaegig()"
+    >
+      <option value="ein_tag">
+        Eintägige Veranstaltung
+      </option>
+
+      <option value="mehrere_tage">
+        Mehrtägige Veranstaltung
+      </option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label>Startdatum *</label>
+    <input
+      type="date"
+      name="startdatum"
+      required
+    >
+  </div>
+
+  <div class="input-group">
+    <label>Startzeit</label>
+    <input
+      type="time"
+      name="startzeit"
+    >
+  </div>
+
+  <div
+    id="mehrtaegig1"
+    class="input-group"
+    style="display:none;"
+  >
+    <label>Enddatum</label>
+    <input
+      type="date"
+      name="enddatum"
+    >
+  </div>
+
+  <div
+    id="mehrtaegig2"
+    class="input-group"
+    style="display:none;"
+  >
+    <label>Endzeit</label>
+    <input
+      type="time"
+      name="endzeit"
+    >
+  </div>
+
+  <div class="input-group">
+    <label>Gäste</label>
+    <input
+      type="number"
+      name="gaeste"
+      placeholder="z. B. 100"
+    >
+  </div>
 
   <div class="input-group full">
+    <label>Veranstaltung</label>
 
-    <label>
-      Veranstaltungsdauer
-    </label>
-         <div class="input-group full">
+    <select name="event">
+      <option>Hochzeit</option>
+      <option>Geburtstag</option>
+      <option>Firmenfeier</option>
+      <option>Privatveranstaltung</option>
+      <option>Festival</option>
+      <option>Sonstiges</option>
+    </select>
+  </div>
 
-  <label>
-    Veranstaltungsdauer
-  </label>
+  <div class="input-group full">
+    <label>Nachricht</label>
 
-  <select id="dauer" name="dauer" onchange="toggleMehrtaegig()">
-    <option value="ein_tag">Eintägige Veranstaltung</option>
-    <option value="mehrere_tage">Mehrtägige Veranstaltung</option>
-  </select>
-
-</div>
-
-
-<div class="input-group">
-
-  <label>
-    Startdatum
-  </label>
-
-  <input
-    type="date"
-    name="startdatum"
-    required
-  >
+    <textarea
+      name="nachricht"
+      placeholder="Was hast du geplant? Gibt es besondere Wünsche?"
+    ></textarea>
+  </div>
 
 </div>
-
-
-<div class="input-group">
-
-  <label>
-    Startzeit
-  </label>
-
-  <input
-    type="time"
-    name="startzeit"
-  >
-
-</div>
-
-
-<div id="mehrtaegig1" class="input-group" style="display:none;">
-
-  <label>
-    Enddatum
-  </label>
-
-  <input
-    type="date"
-    name="enddatum"
-  >
-
-</div>
-
-
-<div id="mehrtaegig2" class="input-group" style="display:none;">
-
-  <label>
-    Endzeit
-  </label>
-
-  <input
-    type="time"
-    name="endzeit"
-  >
-
-</div>
-
-          <div class="input-group">
-
-            <label>
-              Gäste
-            </label>
-
-            <input
-              type="number"
-              name="gaeste"
-              placeholder="z. B. 100"
-            >
-
-          </div>
-
-
-
-          <div class="input-group full">
-
-            <label>
-              Veranstaltung
-            </label>
-
-            <select name="event">
-
-              <option>
-                Hochzeit
-              </option>
-
-              <option>
-                Geburtstag
-              </option>
-
-              <option>
-                Firmenfeier
-              </option>
-
-              <option>
-                Privatveranstaltung
-              </option>
-
-              <option>
-                Festival
-              </option>
-
-              <option>
-                Sonstiges
-              </option>
-
-            </select>
-
-          </div>
-
-
-
-          <div class="input-group full">
-
-            <label>
-              Nachricht
-            </label>
-
-            <textarea
-              name="nachricht"
-              placeholder="Wo findet dein Event statt und was hast du geplant?"
-            ></textarea>
-
-          </div>
-
-
-        </div>
-
-
         <button
           type="submit"
           class="btn btn-dark"
