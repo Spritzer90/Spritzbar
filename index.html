@@ -1976,24 +1976,6 @@
 
         <div class="form-grid">
 
-
-          <div class="input-group">
-
-            <label>
-              Name
-            </label>
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Dein Name"
-              required
-            >
-
-          </div>
-
-
-
          <div class="input-group full">
 
   <label>
@@ -2250,7 +2232,25 @@ document
   });
 
 });
+function toggleMehrtaegig() {
 
+  const dauer = document.getElementById("dauer").value;
+
+  const ende1 = document.getElementById("mehrtaegig1");
+  const ende2 = document.getElementById("mehrtaegig2");
+
+  if (dauer === "mehrere_tage") {
+
+    ende1.style.display = "flex";
+    ende2.style.display = "flex";
+
+  } else {
+
+    ende1.style.display = "none";
+    ende2.style.display = "none";
+
+  }
+}
 </script>
 
 
