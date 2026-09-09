@@ -1994,20 +1994,75 @@
 
 
 
-          <div class="input-group">
+         <div class="input-group full">
 
-            <label>
-              E-Mail
-            </label>
+  <label>
+    Veranstaltungsdauer
+  </label>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="name@email.de"
-              required
-            >
+  <select id="dauer" name="dauer" onchange="toggleMehrtaegig()">
+    <option value="ein_tag">Eintägige Veranstaltung</option>
+    <option value="mehrere_tage">Mehrtägige Veranstaltung</option>
+  </select>
 
-          </div>
+</div>
+
+
+<div class="input-group">
+
+  <label>
+    Startdatum
+  </label>
+
+  <input
+    type="date"
+    name="startdatum"
+    required
+  >
+
+</div>
+
+
+<div class="input-group">
+
+  <label>
+    Startzeit
+  </label>
+
+  <input
+    type="time"
+    name="startzeit"
+  >
+
+</div>
+
+
+<div id="mehrtaegig1" class="input-group" style="display:none;">
+
+  <label>
+    Enddatum
+  </label>
+
+  <input
+    type="date"
+    name="enddatum"
+  >
+
+</div>
+
+
+<div id="mehrtaegig2" class="input-group" style="display:none;">
+
+  <label>
+    Endzeit
+  </label>
+
+  <input
+    type="time"
+    name="endzeit"
+  >
+
+</div>
 
 
 
